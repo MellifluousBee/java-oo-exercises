@@ -13,6 +13,7 @@ public class Robot {
 	private int orientation;
 //	orientation- north-1, east 2, south 3, west 4
 	
+	
 
 //create constructor/create robot- purpose of constructor is to give fields a value
 public Robot(String name, double xPos, double yPos, int speed, int orientation){//no return type
