@@ -1,18 +1,18 @@
 package robot;
 
-public class Robot {
+public class Robot{
 // Fields:	
-	private String name;
+	protected String name;
 //	name- string
-	private double xPos;
+	protected double xPos;
 //	position x- double
-	private double yPos;
+	protected double yPos;
 //	position y- double
-	private int speed;
+	protected int speed;
 //	speed- int
-	private int orientation;
+	protected int orientation;
 //	orientation- north-1, east 2, south 3, west 4
-	
+	RobotBehavior behavior;
 	
 
 //create constructor/create robot- purpose of constructor is to give fields a value
@@ -64,6 +64,9 @@ public double tellDistance(Robot other){
 	return distance;
 }
 
+public void setBehavior(RobotBehavior behavior){
+	this.behavior=behavior;
+}
 
 public String toString(){
 	return "Name: " + this.name + " Position: (" + this.xPos + " , " + this.yPos + ")" + " Speed: " + this.speed + " Orientation: " + this.orientation;
@@ -73,8 +76,14 @@ public static void main(String args[]){//create an instance of the robot object
 	Robot myRobot= new Robot("Jessica", 2.0, 6.5, 25, 3);
 	//have successfully constructed an instance of the Robot class
 	//can now use the methods and behaviors previously defined
-	System.out.println(myRobot.toString());//toString unecessary, see next line
+	System.out.println(myRobot.toString());//toString unnecessary, see next line
 	System.out.println(myRobot);//automatically calls toString method
-}
-}
+	Robot mel= new Robot("Mel" , 2.0,6,44,3);
+	mel.setBehavior(new RepetitiveBehaviors()); //creates a new instance of the robot behavior's behavior
+	mel.behavior.doNextMove(myRobot, mel);
 	
+	
+
+
+}	
+}

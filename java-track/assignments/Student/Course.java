@@ -7,12 +7,14 @@ public class Course {
 	private int credits;
 	private String name;
 	private int seatsRemaining;
+	private static ArrayList<Course>courses= new ArrayList<Course>();
 	
 	public Course(String name, int credits, int seatsRemaining){
 		this.students= new ArrayList<Student>();
 		this.credits=credits;
 		this.seatsRemaining= seatsRemaining;
 		this.name=name;
+		courses.add(this);
 	}
 	
 	public String getName(){
@@ -59,6 +61,9 @@ public class Course {
 		}
 			
 		
+	}
+	public static ArrayList<Course> getAllCourses(){
+		return Course.courses;
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

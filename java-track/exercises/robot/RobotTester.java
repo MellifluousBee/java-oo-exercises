@@ -25,4 +25,10 @@ public class RobotTester {
 		assertTrue(Testbot.tellDistance(Other)== 0);
 		
 	}
+	@Test
+	public void testRevolt(){
+		Slave Testbot= new Slave("Slavebot", 5,5,2,90);
+		Testbot.revolt();
+		assertTrue(Testbot.obeys()==false);
+	}
 }

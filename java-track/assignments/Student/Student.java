@@ -87,7 +87,7 @@ public class Student {
 	
 		
 	
-	public Student createLegacy(Student wife, Student spouse){
+	public static Student createLegacy(Student wife, Student spouse){
 		Student n= new Student(wife.getName(), spouse.getName(),(wife.getStudentID()+spouse.getStudentID()));
 		n.GPA= (wife.getGPA() + spouse.getGPA())/2.0;
 		if(wife.getCredits()>spouse.getCredits()){
