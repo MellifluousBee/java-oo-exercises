@@ -1,14 +1,15 @@
 package Blogz;
 import java.util.Date;
 
-public class Post {
+public class Post extends Entity {
 	private String title;
 	private String body;
 	private String author;
 	private final Date created;
 	private Date modified;
 	
-	public Post(String title, String body, String author){
+	public Post(int uid,String title, String body, String author){
+		super(uid);
 		this.title=title;
 		this.body=body;
 		this.author=author;
@@ -42,11 +43,11 @@ public class Post {
 	public static void main(String[] args) {
 		
 		
-		Post One= new Post("1", "First post", "Mel");
+		Post One= new Post(1, "1", "First post", "Mel");
 		System.out.println(One.toString());
 		System.out.println(One.created);
 		
-		Post Two= new Post("2", "Second post", "Mel");
+		Post Two= new Post(2, "2", "Second post", "Mel");
 		for (int i=0; i<600;i++){
 			System.out.println(Two.created);
 		}

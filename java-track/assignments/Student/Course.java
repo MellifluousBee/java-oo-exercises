@@ -65,6 +65,21 @@ public class Course {
 	public static ArrayList<Course> getAllCourses(){
 		return Course.courses;
 	}
+	@Override
+	public boolean equals(Object o){
+		//self check
+		if (this == o)
+			return true;
+		//null check
+		if(o==null)
+			return false;
+		//type check and cast
+		if (getClass() != getClass())
+			return false;
+		Course course= (Course) o;
+		//field comparison
+		return java.util.Objects.equals(name, course.name) && java.util.Objects.equals(credits, course.credits);
+	}	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 

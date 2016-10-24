@@ -98,7 +98,21 @@ public class Student {
 		return n;
 		
 	}
-	
+	@Override
+	public boolean equals(Object o){
+		//self check
+		if (this == o)
+			return true;
+		//null check
+		if(o==null)
+			return false;
+		//type check and cast
+		if (getClass() != getClass())
+			return false;
+		Student student= (Student) o;
+		//field comparison
+		return java.util.Objects.equals(studentID, student.studentID);
+	}	
 		
 	
 	

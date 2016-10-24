@@ -5,13 +5,14 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.ArrayList;
 
-public class User {
+public class User extends Entity {
 	
 	private String username;
 	private String hashedPassword;
 	private static List<User> users= new ArrayList<User>();
 	
-	public User(String username, String password){
+	public User(int uid, String username, String password){
+		super(uid);
 		if(isValidUsername(username)){
 			this.username=username;
 		}else{
@@ -19,6 +20,7 @@ public class User {
 		}
 		this.hashedPassword=User.hashPassword(password); //not hashed yet, must use public static method to has before setting instance variable
 		users.add(this);
+		
 	}
 	
 	private static String hashPassword(String a){
