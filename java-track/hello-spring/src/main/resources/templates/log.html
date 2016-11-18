@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th= "http://www.thymeleaf.org">
+	<head>
+		<title>Hello, Spring!</title>
+	</head>
+	<body>
+<!-- 		<h1 th:text="'Hello, ' + ${name} + '!'"></h1> -->
+		<!-- Display a log of all Hellos -->
+		<ul>
+			<li th:each="log : ${logs}">We said hello to <span th:text="${log.name}"></span> at <span th:text="${#dates.format(log.timestamp,'yyyy-MM-dd')}"></span></li>
+		</ul>
+	</body>
+</html>
